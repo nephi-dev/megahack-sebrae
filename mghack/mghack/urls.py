@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from call_api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('qrapi', views.image, name='home'),
+    path('qrapi/<str:live_link>/', views.image, name='qr_image')
 ]
