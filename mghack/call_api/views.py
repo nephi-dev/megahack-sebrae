@@ -10,6 +10,9 @@ def image(request):
     print(live_link)
     if live_link != None:
         image = qr_generator.create_qr(live_link)
+        if image == None:
+            return HttpResponse("There's no livestream link in your post")
+
         response = HttpResponse(content_type='image/png')
         image.save(response, 'PNG')
         return response

@@ -12,3 +12,4 @@ def create_qr(link):
     if is_secure(link):
         image = qrcode.make(link)
         return image
+    return None
