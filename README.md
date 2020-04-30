@@ -58,4 +58,4 @@ That will return the json `{'categories': {list of categories}, 'sub_categories'
 Use the GET method in this url to Get All Consultancies in DataBase:
 
     get_consultancies
-That will return the json `{'categories': {list of consultancies}}`.
+That will return the json `{'consultancies': {list of consultancies}}`.
