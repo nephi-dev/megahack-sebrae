@@ -26,7 +26,7 @@ SECRET_KEY = 'r&#f6+7--#45rb-ld(pf3ncukgcglb_(^xs4w!u4e55jj6#%%l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://mghack-qrapi.herokuapp.com/']
 
 
 # Application definition
@@ -83,7 +83,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -127,4 +126,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
 django_heroku.settings(locals())
