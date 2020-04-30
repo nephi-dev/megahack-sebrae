@@ -20,7 +20,7 @@ from call_api import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='home'),
-    path('qrapi/<str:live_link>/', views.image, name='qr_api'),
+    path('qrapi/', views.image, name='qr_api'),
     path('usersapi/', include('users.urls'), name='user_api'),
     path('consultapi/', include('consult.urls'), name='consult_api')
 ]

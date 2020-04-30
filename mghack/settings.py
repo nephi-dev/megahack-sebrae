@@ -22,11 +22,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'r&#f6+7--#45rb-ld(pf3ncukgcglb_(^xs4w!u4e55jj6#%%l'
-SECRET_KEY = os.environ.get('SECRET_KEY')
+#SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-DEBUG = os.environ.get('DEBUG') == 'True'
+#DEBUG = os.environ.get('DEBUG') == 'True'
 
 ALLOWED_HOSTS = ['https://mghack-qrapi.herokuapp.com/']
 
