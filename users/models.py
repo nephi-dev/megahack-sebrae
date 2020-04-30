@@ -15,13 +15,15 @@ class Users(models.Model):
     state = models.CharField(max_length=256)
 
     city = models.CharField(max_length=256)
+    image_link = models.CharField(max_length=500)
     stars = models.PositiveIntegerField(default=0)
 
-    my_calendar = models.ForeignKey('users.Calendar', on_delete=models.CASCADE)
-
     def save(self, **kwargs):
-        if not self.user_password.startswith('bcrypt_sha256'):
-            self.user_password = make_password(self.user_password)
+        if type(self.stars) != tuple:
+            if not self.user_password.startswith('bcrypt_sha256'):
+                self.user_password = make_password(self.user_password)
+        else:
+            self.stars = self.stars[1]
         super().save(**kwargs)
 
     class Meta:

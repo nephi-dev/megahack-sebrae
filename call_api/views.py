@@ -20,4 +20,4 @@ def image(request):
 
 
 def index(request):
-    return HttpResponse('Access /qrapi or /users or /consults to use our api')
+    return HttpResponse('Access /qrapi or /usersapi or /consultapi to use our api')
