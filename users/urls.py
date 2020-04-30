@@ -13,5 +13,5 @@ urlpatterns = [
         'create_user/<str:name>/<str:business_name>/<str:user_email>/<str:user_password>/<str:state>/<str:city>/<str:image_link>',
         views.create_user
     ),
-    path('delete_user/<str:user_pk>', views.delete_user)
+    path('delete_user/<int:user_pk>', views.delete_user)
 ]

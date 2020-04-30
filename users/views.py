@@ -28,6 +28,7 @@ def send_stars(request, consult_pk=None, user_pk=None, stars=None):
         rh.save()
         given_to.stars = (given_to.stars, int(stars))
         given_to.save()
+        return HttpResponse(f'Succefuly send {stars} star(s) to {given_to}')
     else:
         return HttpResponse('Not Allowed Posts')
 
@@ -41,6 +42,10 @@ def get_users(request):
             for key, val in user.values().items():
                 if key != 'user_password':
                     new_dict[key] = val
+            all_users['users'].append(new_dict)
+        return JsonResponse(all_users)
+    else:
+        return HttpResponse('Not Allowed Posts')
 
 
 def login(request, user_email=None, user_pass=None):
