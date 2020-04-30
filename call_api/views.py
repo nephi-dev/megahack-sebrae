@@ -7,7 +7,6 @@ from . import qr_generator
 
 def image(request):
     live_link = request.GET.get('live_link')
-    print(live_link)
     if live_link != None:
         image = qr_generator.create_qr(live_link)
         if image == None:
@@ -21,4 +20,4 @@ def image(request):
 
 
 def index(request):
-    return HttpResponse('Use /qrapi to access the API')
+    return HttpResponse('Access /qrapi or /users or /consults to use our api')
