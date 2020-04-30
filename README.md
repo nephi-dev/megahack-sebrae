@@ -38,7 +38,7 @@ That will return the response `Delected user succefuly` on a succeful delete.
 Use the GET method in this url to Send a Star to a User:
 
     send_stars/{consultancy_id}/{user_id}/{how much stars in int}
-That will return the response `Succefuly send {stars} star(s) to {given_to}` where "stars" is teh ammout of stars given and "given_to" is the name of who is receiving the stars.
+That will return the response `Succefuly send {stars} star(s) to {given_to}` where "stars" is the ammout of stars given and "given_to" is the name of who is receiving the stars.
 
 ### Get Users
 Use the GET method in this url to Get All Users in DataBase:
