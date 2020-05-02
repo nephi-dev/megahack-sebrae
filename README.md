@@ -1,5 +1,5 @@
 # Using API's
-## Main link to all api's: https://mghack-qrapi.herokuapp.com/
+## Main link to all api's: https://mghack-apis.herokuapp.com/
 Avaible API's + Status:
 
  1. QRcode API (not working)
@@ -7,14 +7,14 @@ Avaible API's + Status:
  3. Consultancies API (partialy working)
 
 # QRcode API walkthrough
-> ### Link: https://mghack-qrapi.herokuapp.com/qrapi/
+> ### Link: https://mghack-apis.herokuapp.com/qrapi/
 Use the GET method in this url:
 
     ?live_link={your link here}
 That will return to you an qrcode image of the link you have passed.
 
 # Users API walkthrough
-> ### Link: https://mghack-qrapi.herokuapp.com/usersapi/
+> ### Link: https://mghack-apis.herokuapp.com/usersapi/
 ### Create a User
 Use the GET method in this url to Create a user:
 
@@ -47,7 +47,7 @@ Use the GET method in this url to Get All Users in DataBase:
 That will return the json `{'users': {the list of all users}}` .
 
 # Consultancies API walkthrough
-> ### Link: https://mghack-qrapi.herokuapp.com/consultapi/
+> ### Link: https://mghack-apis.herokuapp.com/consultapi/
 ### Get Categories
 Use the GET method in this url to Get All Categories and Sub Categories in DataBase:
 
@@ -58,4 +58,4 @@ That will return the json `{'categories': {list of categories}, 'sub_categories'
 Use the GET method in this url to Get All Consultancies in DataBase:
 
     get_consultancies
-That will return the json `{'categories': {list of consultancies}}`.
+That will return the json `{'consultancies': {list of consultancies}}`.

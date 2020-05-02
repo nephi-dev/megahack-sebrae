@@ -35,3 +35,8 @@ def get_consults(request):
         return JsonResponse(all_consults, json_dumps_params={'ensure_ascii': False})
     else:
         return HttpResponse('Not Allowed Posts')
+
+##########
+#--TODO--#
+# CREATE A RECOMENDATION SYSTEM #
+##########
