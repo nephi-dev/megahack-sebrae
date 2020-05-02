@@ -93,7 +93,7 @@ def create_user(request, name=None, business_name=None, user_email=None, user_pa
             user.save()
             return HttpResponse('Created user succefuly')
         except Exception as err:
-            return HttpResponse(f'An error occoured: {err}')
+            return HttpResponse(f'An error has occoured: {err}')
     else:
         return HttpResponse('Not Allowed Posts')
 

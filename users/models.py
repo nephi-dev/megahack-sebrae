@@ -16,6 +16,8 @@ class Users(models.Model):
 
     city = models.CharField(max_length=256)
     image_link = models.CharField(max_length=500)
+
+    most_viewed = models.CharField(max_length=256, default='', blank=True)
     stars = models.PositiveIntegerField(default=0)
 
     def save(self, **kwargs):

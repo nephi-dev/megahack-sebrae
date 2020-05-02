@@ -45,5 +45,17 @@ class Consultancies(models.Model):
     def __str__(self):
         return self.title
 
-# TODO MENSAGING
-# TODO REQUESTER SELECT THE PRODUCT BY MSG
+
+class Messages(models.Model):
+    consult = models.ForeignKey(Consultancies, on_delete=models.CASCADE)
+    message = models.CharField(max_length=256)
+
+    posted_by = models.ForeignKey('users.Users', on_delete=models.CASCADE)
+    post_date = models.DateField(default=timezone.now)
+
+    class Meta:
+        verbose_name = 'Message'
+        verbose_name_plural = 'Messages'
+
+    def __str__(self):
+        return f'{self.posted_by} > {self.consult}'
