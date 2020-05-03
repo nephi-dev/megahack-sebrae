@@ -13,6 +13,10 @@ export default function HomeScreen() {
     navigation.navigate('Navbar')
   }
 
+  function navigateToProfile() {
+    navigation.navigate('Profile')
+  }
+
   return (
     <Container>
       <Header>
@@ -22,7 +26,7 @@ export default function HomeScreen() {
         <PageTitle>Home</PageTitle>
       </Header>
 
-      <ProfileBar>
+      <ProfileBar onPress={navigateToProfile}>
         <ProfileBarHorizontal>
           <ProfileImage source={Image}/>
 

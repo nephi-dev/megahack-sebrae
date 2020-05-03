@@ -17,7 +17,7 @@ export const PageTitle = styled.Text`
   margin-left: 10px;
 `;
 
-export const ProfileBar = styled.View`
+export const ProfileBar = styled.TouchableOpacity`
   margin: 30px;
 `;
 
