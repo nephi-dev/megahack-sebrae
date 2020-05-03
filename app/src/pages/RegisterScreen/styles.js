@@ -9,7 +9,7 @@ export const Left = styled.TouchableOpacity`
 `;
 
 export const Title = styled.Text`
-  margin-top: 40%;
+  margin-top: 30%;
   text-align: center;
   font-size: 25px;
   font-weight: bold;

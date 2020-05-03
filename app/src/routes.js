@@ -22,8 +22,8 @@ export default function Routes() {
         <NavigationContainer>
             <AppStack.Navigator screenOptions={{headerShown: false}}>
 
-                <AppStack.Screen name="Register" component={RegisterScreen}/>
                 <AppStack.Screen name="Login" component={LoginScreen}/>
+                <AppStack.Screen name="Register" component={RegisterScreen}/>
                 <AppStack.Screen name="Home" component={HomeScreen}/>
                 <AppStack.Screen name="Navbar" component={NavbarScreen}/>
                 <AppStack.Screen name="Categorys" component={CategorysScreen}/>

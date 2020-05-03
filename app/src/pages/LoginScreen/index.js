@@ -1,8 +1,19 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { Container, Header, Logo, Title, Description, Form, Input, LoginButtonView, LoginButtonText, NewPasswordText, Division, RegisterButtonView, RegisterButtonText, BorderInput } from './styles';
+import { useNavigation } from '@react-navigation/native'
 
 export default function LoginScreen() {
+  const navigation = useNavigation()
+
+  function navigateToRegisterScreen() {
+    navigation.navigate('Register')
+  }
+
+  function navigateToHomeScreen() {
+    navigation.navigate('Home')
+  }
+
   return (
     <Container>
       <Header>
@@ -25,7 +36,7 @@ export default function LoginScreen() {
         <BorderInput />
 
 
-        <LoginButtonView>
+        <LoginButtonView onPress={navigateToHomeScreen}>
           <LoginButtonText>ENTRAR</LoginButtonText>
         </LoginButtonView>
       </Form>
@@ -36,7 +47,7 @@ export default function LoginScreen() {
 
       <Division />
 
-      <RegisterButtonView>
+      <RegisterButtonView onPress={navigateToRegisterScreen}>
         <RegisterButtonText>CRIAR UMA NOVA CONTA</RegisterButtonText>
       </RegisterButtonView>
 
