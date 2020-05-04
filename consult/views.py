@@ -43,7 +43,7 @@ def create_consult(request, user_pk=None, title=None, desc=None, price=None, cat
         try:
             price = float(price)
             consultancy = Consultancies(
-                posted_by=Users.ojbects.get(pk=user_pk),
+                posted_by=Users.objects.get(pk=user_pk),
                 title=title,
                 description=desc,
                 price=price,
@@ -72,7 +72,7 @@ def send_message(request, message=None, consult_pk=None, user_pk=None):
         try:
             msg = Messages(
                 consult=Categories.objects.get(pk=consult_pk),
-                posted_by=Users.ojbects.get(pk=user_pk),
+                posted_by=Users.objects.get(pk=user_pk),
                 message=message
             )
             message.save()
