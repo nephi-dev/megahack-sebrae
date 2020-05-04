@@ -106,4 +106,5 @@ class RateHistory(models.Model):
 
 class Calendar(models.Model):
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    consult = models.ForeignKey(Consultancies, on_delete=models.CASCADE)
     date = models.DateField()

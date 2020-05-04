@@ -1,8 +1,9 @@
 from django.shortcuts import render, HttpResponse
 from django.http import JsonResponse
-from .models import Users, RateHistory
+from .models import Users, RateHistory, Calendar
 from consult.models import Consultancies
 from django.contrib.auth.hashers import check_password
+from datetime import datetime
 
 # Create your views here.
 
@@ -103,5 +104,25 @@ def delete_user(request, user_pk):
 
         Users.objects.filter(pk=user_pk).delete()
         return HttpResponse('Delected user succefuly')
+    else:
+        return HttpResponse('Not Allowed Posts')
+
+
+def create_date(request, user_pk, consult_pk, date):
+    if request.method == 'GET':
+        user = Users.objects.get(pk=user_pk)
+        consult = Consultancies.objects.get(pk=consult_pk)
+        dat = datetime.strptime(date, '%d/%m/%Y %H:%M:%S')
+
+        try:
+            cal = Calendar(
+                user=user,
+                consult=consult,
+                date=dat,
+            )
+            cal.save()
+            return HttpResponse('Created date succefuly')
+        except Exception as err:
+            return HttpResponse(f'An error has occoured: {err}')
     else:
         return HttpResponse('Not Allowed Posts')
