@@ -13,6 +13,8 @@ import ChatScreen from './pages/ChatScreen'
 import CalendarScreen from './pages/CalendarScreen'
 import PaymentScreen from './pages/PaymentScreen'
 import ProfileScreen from './pages/ProfileScreen'
+import CreateConsultanciesScreen from './pages/CreateConsultancies'
+
 
 
 
@@ -31,6 +33,7 @@ export default function Routes() {
                 <AppStack.Screen name="Calendar" component={CalendarScreen}/>
                 <AppStack.Screen name="Payment" component={PaymentScreen}/>
                 <AppStack.Screen name="Profile" component={ProfileScreen}/>
+                <AppStack.Screen name="Consultancies" component={CreateConsultanciesScreen}/>
 
 
             </AppStack.Navigator>

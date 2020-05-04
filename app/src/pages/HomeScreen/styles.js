@@ -6,7 +6,7 @@ export const Container = styled.View`
 
 export const Header = styled.View`
   height: 70px;
-  background-color: #FFF246;
+  background-color: #FFCE45;
   flex-direction: row;
 `;
 

@@ -13,6 +13,11 @@ export default function ProfileScreen() {
     navigation.navigate('Home')
   }
 
+  function navigateToConsultancies() {
+    navigation.navigate('Consultancies')
+  }
+
+  
   return (
     <Container>
       <Header>
@@ -67,7 +72,7 @@ export default function ProfileScreen() {
       </ProfileBar>
 
       <AddServicesButton>
-        <AddServicesButtonText>Adicionar novo serviços</AddServicesButtonText>
+        <AddServicesButtonText onPress={navigateToConsultancies}>Adicionar novo serviços</AddServicesButtonText>
       </AddServicesButton>
 
       <ServicesBar>

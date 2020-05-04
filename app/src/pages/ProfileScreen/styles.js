@@ -6,7 +6,7 @@ export const Container = styled.View`
 
 export const Header = styled.View`
   height: 60px;
-  background-color: #FFF246;
+  background-color: #FFCE45;
   flex-direction: row;
   padding-top: 30px;
 `;
@@ -16,8 +16,8 @@ export const IconLeft = styled.TouchableOpacity`
 `;
 
 export const TitleHeader = styled.Text`
-  font-size: 20px;
-  margin-top: -4px;
+  font-size: 18px;
+  margin-top: -3px;
   margin-left: 7px;
 
 `;
@@ -72,15 +72,16 @@ export const UpdateButtonText = styled.Text`
 export const BorderInput = styled.View`
     border: 0.5px;
     margin-top: 5px;
-    border-color: #FFF246;
+    border-color: #FFCE45;
+    margin-top: 15px;
 `;
 
 export const AddServicesButton = styled.TouchableOpacity`
   align-self: center;
   margin-top: 10px;
-  background-color: #FFF246;
+  background-color: #FFCE45;
   padding: 8px;
-  border-radius: 6px;
+  border-radius: 10px;
 `;
 
 

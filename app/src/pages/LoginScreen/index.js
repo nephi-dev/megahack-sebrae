@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { Container, Header, Logo, Title, Description, Form, Input, LoginButtonView, LoginButtonText, NewPasswordText, Division, RegisterButtonView, RegisterButtonText, BorderInput } from './styles';
 import { useNavigation } from '@react-navigation/native'
 
 export default function LoginScreen() {
+  const [email, setEmail] = useState('aa')
+  const [password, setPassword] = useState('aa')
+
+  async function loadAccount() {
+      const mainLink = 'https://mghack-apis.herokuapp.com/usersapi/'
+      const response = await fetch(mainLink + `login/${email}/${password}`, {
+      method: 'GET',
+      
+      })
+      .then(response => response.json())
+      .then(response => {
+
+      console.log(response)
+
+      })
+
+      navigateToHomeScreen()
+  }
+
   const navigation = useNavigation()
 
   function navigateToRegisterScreen() {
@@ -36,7 +55,7 @@ export default function LoginScreen() {
         <BorderInput />
 
 
-        <LoginButtonView onPress={navigateToHomeScreen}>
+        <LoginButtonView onPress={loadAccount}>
           <LoginButtonText>ENTRAR</LoginButtonText>
         </LoginButtonView>
       </Form>
