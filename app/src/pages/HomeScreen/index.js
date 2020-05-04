@@ -105,7 +105,7 @@ export default function HomeScreen() {
       </SearchBar>
 
       <ListVertical 
-        data={categorys}
+        data={[1, 2, 3, 4]}
         keyExtractor={item => String(item)}
         renderItem={( item ) => (
           <View>
