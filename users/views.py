@@ -38,7 +38,7 @@ def get_users(request):
     if request.method == 'GET':
         all_users = {'users': list()}
         # Adding Users to the dict
-        for user in Users.objects:
+        for user in Users.objects.values():
             new_dict = dict()
             for key, val in user.values().items():
                 if key != 'user_password':
@@ -132,7 +132,7 @@ def get_dates(request):
     if request.method == 'GET':
         all_dates = {'dates': list()}
         # Adding Dates to the dict
-        for date in Calendar.objects:
+        for date in Calendar.objects.values():
             all_dates['dates'].append(date)
         return JsonResponse(all_dates)
     else:
