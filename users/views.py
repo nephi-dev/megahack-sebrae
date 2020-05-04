@@ -14,10 +14,10 @@ def index(request):
 def send_stars(request, consult_pk=None, user_pk=None, stars=None):
     if request.method == 'GET':
         given_by_pk = user_pk
-        given_by = Users.objects.filter(pk=given_by_pk)
+        given_by = Users.objects.get(pk=given_by_pk)
 
         colsult_pk = consult_pk
-        consult = Consultancies.objects.filter(pk=colsult_pk)
+        consult = Consultancies.objects.get(pk=colsult_pk)
 
         given_to = consult.posted_by
         rh = RateHistory(

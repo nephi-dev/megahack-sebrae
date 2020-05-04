@@ -43,12 +43,12 @@ def create_consult(request, user_pk=None, title=None, desc=None, price=None, cat
         try:
             price = float(price)
             consultancy = Consultancies(
-                posted_by=user_pk,
+                posted_by=Users.ojbects.get(pk=user_pk),
                 title=title,
                 description=desc,
                 price=price,
-                category=category_pk,
-                sub_category=sub_category_pk
+                category=Categories.objects.get(pk=category_pk),
+                sub_category=SubCategories.objects.get(pk=sub_category_pk)
             )
             consultancy.save()
             return HttpResponse('Created consultancy succefuly')
@@ -71,8 +71,8 @@ def send_message(request, message=None, consult_pk=None, user_pk=None):
     if request.method == 'GET':
         try:
             msg = Messages(
-                consult=consult_pk,
-                posted_by=user_pk,
+                consult=Categories.objects.get(pk=consult_pk),
+                posted_by=Users.ojbects.get(pk=user_pk),
                 message=message
             )
             message.save()
