@@ -2,10 +2,18 @@ import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'
 import Image from '../../assets/profile.jpg'
+import { useNavigation } from '@react-navigation/native'
+
 
 import { Container, Header, LeftIcon, Title, MarkAdate, ChatMenssagensBar, MarkAdateText, ChatBarTop, ChatBar, ProfileImage, ProfileName, ChatMenssagens, ChatMenssagensText, ChatInputBar, ChatInput, ChatInputSendButton, ChatInputSendButtonText } from './styles';
 
 export default function ChatScreen() {
+  const navigation = useNavigation()
+
+  function navigateToHome() {
+    navigation.navigate('Calendar')
+  }
+
   return (
     <Container>
       <Header>
@@ -36,7 +44,7 @@ export default function ChatScreen() {
         
         
         <ChatInputBar>
-          <ChatInputSendButton>
+          <ChatInputSendButton onPress={navigateToHome}>
             <ChatInputSendButtonText>Contratar</ChatInputSendButtonText>
           </ChatInputSendButton>
 

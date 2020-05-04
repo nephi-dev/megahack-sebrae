@@ -9,6 +9,8 @@ import { Container, Header, PageTitle, ProfileBar, TextHorizontal, ProfileDescri
 export default function HomeScreen() {
 
   const [data, setData] = useState([])
+  const [categorys, setCategorys] = useState([])
+
 
   const [consultancyId, setConsultancyId] = useState(1)
   const [userId, setUserId] = useState(1)
@@ -29,6 +31,21 @@ export default function HomeScreen() {
 
       })
       }
+
+    async function loadCategorys() {
+      const mainLink = 'https://mghack-apis.herokuapp.com/consultapi/'
+      const response = await fetch(mainLink + `get_categories`, {
+      method: 'GET',
+      
+      })
+      .then(response => response.json())
+      .then(response => {
+
+      setCategorys(response.categories)
+      console.log(`oooo ${categorys}`);
+
+      })
+    }
     
       loadConsultancies()
     
@@ -88,7 +105,7 @@ export default function HomeScreen() {
       </SearchBar>
 
       <ListVertical 
-        data={data}
+        data={categorys}
         keyExtractor={item => String(item)}
         renderItem={( item ) => (
           <View>

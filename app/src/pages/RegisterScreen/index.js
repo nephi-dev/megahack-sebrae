@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Keyboard } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
 
 import { Container, Left, Title, Form, Input, BorderInput, RegisterButton, RegisterButtonText } from './styles';
 
 export default function RegisterScreen() {
-  const [name, setName] = useState('aa')
-  const [userEmail, setEmail] = useState('aa')
-  const [userPassword, setPassword] = useState('aa')
+  const [name, setName] = useState('')
+  const [userEmail, setEmail] = useState('')
+  const [userPassword, setPassword] = useState('')
   const [businessName, setBusinessName] = useState('aa')
   const [state, setState] = useState('aa')
   const [city, setCity] = useState('aa')
@@ -21,6 +21,17 @@ export default function RegisterScreen() {
     const response = await fetch(mainLink + `create_user/${name}/${businessName}/${userEmail}/${userPassword}/${state}/${city}/${imageLink}`, {
     method: 'GET',
     });
+  }
+
+  async function handleRegister() {
+    await registerUser()
+
+    setName('')
+    setEmail('')
+    setPassword('')
+    Keyboard.dismiss()
+    navigateToHome()
+
   }
 
 
@@ -44,18 +55,30 @@ export default function RegisterScreen() {
 
       <Form>
         <Input 
-          placeholder='Nome:'/>
+          value={name}
+          onChangeText={setName}
+          autoCorrect={false}
+          placeholder='Nome:'
+          />
         <BorderInput />
         
-        <Input 
+        <Input
+          value={userEmail}
+          onChangeText={setEmail}
+          autoCorrect={false}
           placeholder='Email:'/>
         <BorderInput />
 
-        <Input 
+        <Input
+          secureTextEntry={true}
+          password={true}
+          value={userPassword}
+          onChangeText={setPassword}
+          autoCorrect={false}
           placeholder='Senha:'/>
         <BorderInput />
       
-        <RegisterButton onPress={registerUser}>
+        <RegisterButton onPress={handleRegister}>
           <RegisterButtonText>CADASTRAR</RegisterButtonText>
         </RegisterButton>
 
