@@ -126,3 +126,14 @@ def create_date(request, user_pk, consult_pk, date):
             return HttpResponse(f'An error has occoured: {err}')
     else:
         return HttpResponse('Not Allowed Posts')
+
+
+def get_dates(request):
+    if request.method == 'GET':
+        all_dates = {'dates': list()}
+        # Adding Dates to the dict
+        for date in Calendar.objects:
+            all_dates['dates'].append(date)
+        return JsonResponse(all_dates)
+    else:
+        return HttpResponse('Not Allowed Posts')
