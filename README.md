@@ -1,4 +1,5 @@
-# Using API's
+
+# Using API's (Currently we deactivated our api)
 ## Main link to all api's: https://mghack-apis.herokuapp.com/
 Avaible API's + Status:
 1. QRcode API (not working)
